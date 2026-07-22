@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MDPI Filter — Explainable research-integrity tooling</title>
+  <meta name="description" content="Open-source browser and Zotero tooling for identifying MDPI publications and building explainable post-publication integrity signals.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://mdpi-filter.pages.dev/">
+  <link rel="stylesheet" href="/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MDPI Filter — Explainable research-integrity tooling">
+  <meta property="og:description" content="Open-source browser and Zotero tooling with explicit evidence, privacy, and release boundaries.">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="/">MDPI Filter</a>
+      <div class="nav-links">
+        <a aria-current="page" href="/">Home</a>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/security.html">Security</a>
+        <a href="https://github.com/orgs/mdpi-filter/repositories">GitHub ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Open source · Browser and Zotero tooling</p>
+      <h1>Research warnings should explain themselves.</h1>
+      <p class="lede">MDPI Filter currently helps researchers identify and navigate MDPI publications and citations. The project is evolving toward a broader evidence-backed integrity layer that distinguishes formal article events from contextual journal or publisher concerns.</p>
+      <div class="actions">
+        <a class="button primary" href="https://chromewebstore.google.com/detail/mdpi-filter/comknkeimaaadpiopddjoknflbmjeccp">Install for Chrome ↗</a>
+        <a class="button" href="https://microsoftedge.microsoft.com/addons/detail/mdpi-filter/efonlkldplkaeekpiajloajjmkappjgi">Install for Edge ↗</a>
+        <a class="button" href="https://github.com/mdpi-filter/mdpi-filter-zotero">Zotero source ↗</a>
+      </div>
+      <div class="notice"><strong>Release boundary:</strong> Chrome and Edge store versions are currently MDPI-focused. Broader integrity signals and Safari/Firefox support are active development work, not yet public store features.</div>
+    </section>
+
+    <section aria-labelledby="state-heading">
+      <p class="eyebrow">Current state</p>
+      <h2 id="state-heading">Released, tested, and planned are shown separately.</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="status released">Released</span>
+          <h3>MDPI detection</h3>
+          <p>Highlight, hide, count, and navigate MDPI results and citations across supported scholarly-search and publisher pages.</p>
+        </article>
+        <article class="card">
+          <span class="status preview">Tested preview</span>
+          <h3>Article integrity events</h3>
+          <p>Work is underway on explainable timelines for retractions, concerns, corrections, reinstatements, withdrawals, and duplicate-publication findings.</p>
+        </article>
+        <article class="card">
+          <span class="status roadmap">Roadmap</span>
+          <h3>Safari, Firefox, and shared evidence</h3>
+          <p>One canonical browser source is planned for Chrome, Edge, Firefox desktop/Android, and Safari on macOS, iOS, and iPadOS.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="signals-heading">
+      <p class="eyebrow">Proposed work-level taxonomy</p>
+      <h2 id="signals-heading">Color supports the meaning; it never replaces the label.</h2>
+      <p class="section-intro">Formal publication events require different semantics. A correction is not a retraction, and a reinstatement changes the current state without erasing the historical timeline.</p>
+      <div class="signal-list">
+        <div class="signal"><span class="signal-icon red" aria-hidden="true">×</span><div><strong>Retracted</strong><p>A formal retraction affects the work.</p></div></div>
+        <div class="signal"><span class="signal-icon orange" aria-hidden="true">!</span><div><strong>Expression of concern</strong><p>Serious concerns are formally recorded but remain unresolved.</p></div></div>
+        <div class="signal"><span class="signal-icon blue" aria-hidden="true">✎</span><div><strong>Corrected</strong><p>A correction, corrigendum, or erratum should be consulted.</p></div></div>
+        <div class="signal"><span class="signal-icon green" aria-hidden="true">↩</span><div><strong>Reinstated</strong><p>A prior retraction was reversed; the history remains visible.</p></div></div>
+        <div class="signal"><span class="signal-icon purple" aria-hidden="true">≡</span><div><strong>Duplicate-publication finding</strong><p>Substantial overlap or duplication is documented as a finding or reason.</p></div></div>
+        <div class="signal"><span class="signal-icon gray" aria-hidden="true">–</span><div><strong>Withdrawn or removed</strong><p>A version was withdrawn or removed from publication.</p></div></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="principles-heading">
+      <p class="eyebrow">Product principles</p>
+      <h2 id="principles-heading">Evidence before verdicts.</h2>
+      <div class="grid">
+        <article class="card"><h3>Scope is explicit</h3><p>Article events, journal context, publisher context, and identity warnings remain separate.</p></article>
+        <article class="card"><h3>Coverage is visible</h3><p>Checked, unresolved, failed, and deferred identifiers are reported instead of silently treated as clean.</p></article>
+        <article class="card"><h3>Provenance is inspectable</h3><p>Warnings should expose source, identifier, event chronology, retrieval date, and applicable exceptions.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Open-source research-integrity tooling. Current name is provisional pending a broader rebrand.</span>
+      <div class="footer-links">
+        <a href="/methodology.html">Methodology</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/security.html">Security</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
