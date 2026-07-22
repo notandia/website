@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security — MDPI Filter</title>
+  <meta name="description" content="Security architecture, release controls, and vulnerability reporting for MDPI Filter.">
+  <link rel="canonical" href="https://mdpi-filter.pages.dev/security.html">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">MDPI Filter</a><div class="nav-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a href="/privacy.html">Privacy</a><a aria-current="page" href="/security.html">Security</a><a href="https://github.com/orgs/mdpi-filter/repositories">GitHub ↗</a></div></nav></header>
+  <main><article class="prose">
+    <p class="eyebrow">Security</p>
+    <h1>Browser and research-library access require explicit trust controls.</h1>
+    <p>Extensions and Zotero plugins execute in privileged environments. The project therefore treats permission scope, message validation, dependency risk, release provenance, and incident reporting as product requirements.</p>
+
+    <h2>Runtime principles</h2>
+    <ul>
+      <li>Request only permissions required for documented features.</li>
+      <li>Do not load remote executable code.</li>
+      <li>Validate messages, identifiers, URLs, colors, and bounded text before use.</li>
+      <li>Keep external requests bounded, time-limited, and user-controllable.</li>
+      <li>Do not write untrusted data into HTML execution sinks.</li>
+      <li>Separate platform packaging from shared detection and evidence logic.</li>
+    </ul>
+
+    <h2>Supply-chain and release controls</h2>
+    <ul>
+      <li>GitHub Actions are pinned to immutable commit SHAs.</li>
+      <li>Dependency audits and static analysis run in CI where applicable.</li>
+      <li>Packages are validated as archives before publication.</li>
+      <li>Checksums and provenance attestations are generated for supported releases.</li>
+      <li>Release workflows must refuse version mismatches and accidental overwrites.</li>
+    </ul>
+
+    <h2>Website security</h2>
+    <p>The site is dependency-free static HTML and CSS. It loads no remote JavaScript. Cloudflare response headers enforce a restrictive content security policy, transport security, framing restrictions, MIME sniffing prevention, and a minimal permissions policy.</p>
+
+    <h2>Reporting vulnerabilities</h2>
+    <p>For sensitive security reports, use GitHub private vulnerability reporting in the affected repository when available. Include the affected version, platform, impact, reproduction steps, and a minimal proof of concept. Do not publicly disclose exploitable details before maintainers have had a reasonable opportunity to respond.</p>
+
+    <h2>Supported repositories</h2>
+    <ul>
+      <li><a href="https://github.com/mdpi-filter/mdpi-filter-chrome/security">Chrome security page</a></li>
+      <li><a href="https://github.com/mdpi-filter/mdpi-filter-microsoft-edge/security">Edge security page</a></li>
+      <li><a href="https://github.com/mdpi-filter/mdpi-filter-zotero/security">Zotero security page</a></li>
+      <li><a href="https://github.com/mdpi-filter/website/security">Website security page</a></li>
+    </ul>
+  </article></main>
+  <footer class="site-footer"><div class="footer-inner"><span>Security reports should avoid public disclosure of exploitable details.</span><div class="footer-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a href="/privacy.html">Privacy</a></div></div></footer>
+</body>
+</html>
