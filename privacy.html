@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy — MDPI Filter</title>
+  <meta name="description" content="Privacy principles and current data boundaries for MDPI Filter browser and Zotero tooling.">
+  <link rel="canonical" href="https://mdpi-filter.pages.dev/privacy.html">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">MDPI Filter</a><div class="nav-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a aria-current="page" href="/privacy.html">Privacy</a><a href="/security.html">Security</a><a href="https://github.com/orgs/mdpi-filter/repositories">GitHub ↗</a></div></nav></header>
+  <main><article class="prose">
+    <p class="eyebrow">Privacy</p>
+    <h1>Research checks should not become browsing surveillance.</h1>
+    <p>This page describes the project’s privacy design direction and must be kept synchronized with the exact behavior of each released client.</p>
+
+    <h2>Current MDPI detection</h2>
+    <p>The browser extension processes page content locally to identify MDPI links and citations. Optional NCBI lookups may transmit scholarly identifiers required for resolution. Settings are stored through the browser extension storage API.</p>
+
+    <h2>Planned integrity lookups</h2>
+    <p>The planned work-level integrity layer transmits normalized scholarly identifiers such as DOI, PMID, or PMCID only when a lookup is enabled. It must not transmit complete page text, citation text, search queries, full browsing history, account identifiers, or analytics identifiers.</p>
+
+    <h2>User control</h2>
+    <ul>
+      <li>Network-assisted lookups must have a documented control.</li>
+      <li>Disabling lookups must result in zero related external requests.</li>
+      <li>Coverage reductions caused by disabling lookups must be visible.</li>
+      <li>Private-browsing behavior must be platform-specific and opt-in where the browser requires it.</li>
+    </ul>
+
+    <h2>Website</h2>
+    <p>The initial project website contains no analytics, advertising, account system, database, cookies, or remote JavaScript. Cloudflare may process ordinary network and security metadata needed to deliver the site under its infrastructure terms.</p>
+
+    <h2>Platform disclosures</h2>
+    <p>Chrome, Edge, Firefox, Safari, and Zotero documentation will be maintained separately when their runtime behavior differs. Store privacy forms must match observed network behavior before every release.</p>
+
+    <h2>Reporting a privacy issue</h2>
+    <p>Use the relevant repository’s security process for sensitive reports. Do not post private browsing data, access tokens, unpublished manuscripts, or personal information in a public issue.</p>
+  </article></main>
+  <footer class="site-footer"><div class="footer-inner"><span>No product analytics are used on this site.</span><div class="footer-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a href="/security.html">Security</a></div></div></footer>
+</body>
+</html>

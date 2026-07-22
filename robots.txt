@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mdpi-filter.pages.dev/sitemap.xml
