@@ -13,30 +13,35 @@
   <main><article class="prose">
     <p class="eyebrow">Privacy</p>
     <h1>Research checks should not become browsing surveillance.</h1>
-    <p>This page describes the project’s privacy design direction and must be kept synchronized with the exact behavior of each released client.</p>
+    <p>This overview describes the project’s common privacy boundary. Each extension has a platform-specific policy whose terminology and storage behavior match that platform.</p>
+
+    <h2>Platform-specific policies</h2>
+    <ul>
+      <li><a href="/privacy/chrome/">Google Chrome extension privacy policy</a></li>
+      <li><a href="/privacy/edge/">Microsoft Edge extension privacy policy</a></li>
+      <li><a href="/privacy/firefox/">Firefox extension privacy policy</a></li>
+      <li><a href="/privacy/safari/">Safari Web Extension privacy policy</a></li>
+    </ul>
 
     <h2>Current MDPI detection</h2>
-    <p>The browser extension processes page content locally to identify MDPI links and citations. Optional NCBI lookups may transmit scholarly identifiers required for resolution. Settings are stored through the browser extension storage API.</p>
+    <p>The browser extension processes page content locally to identify MDPI links and citations. Optional NCBI lookups may transmit only validated scholarly identifiers required for resolution. Settings are stored through the browser extension storage API.</p>
 
     <h2>Planned integrity lookups</h2>
-    <p>The planned work-level integrity layer transmits normalized scholarly identifiers such as DOI, PMID, or PMCID only when a lookup is enabled. It must not transmit complete page text, citation text, search queries, full browsing history, account identifiers, or analytics identifiers.</p>
+    <p>The planned work-level integrity layer may transmit normalized scholarly identifiers such as DOI, PMID, or PMCID only when a lookup is enabled. It must not transmit complete page text, citation text, search queries, full browsing history, account identifiers, or analytics identifiers.</p>
 
     <h2>User control</h2>
     <ul>
-      <li>Network-assisted lookups must have a documented control.</li>
-      <li>Disabling lookups must result in zero related external requests.</li>
-      <li>Coverage reductions caused by disabling lookups must be visible.</li>
-      <li>Private-browsing behavior must be platform-specific and opt-in where the browser requires it.</li>
+      <li>Network-assisted lookups have a documented control.</li>
+      <li>Disabling NCBI lookups results in zero related external requests.</li>
+      <li>Coverage reductions caused by disabling lookups are disclosed.</li>
+      <li>Private-browsing behavior remains platform-specific and opt-in where the platform requires it.</li>
     </ul>
 
     <h2>Website</h2>
-    <p>The initial project website contains no analytics, advertising, account system, database, cookies, or remote JavaScript. Cloudflare may process ordinary network and security metadata needed to deliver the site under its infrastructure terms.</p>
-
-    <h2>Platform disclosures</h2>
-    <p>Chrome, Edge, Firefox, Safari, and Zotero documentation will be maintained separately when their runtime behavior differs. Store privacy forms must match observed network behavior before every release.</p>
+    <p>The project website contains no analytics, advertising, account system, database, cookies, or remote JavaScript. Cloudflare may process ordinary network and security metadata needed to deliver the site under its infrastructure terms.</p>
 
     <h2>Reporting a privacy issue</h2>
-    <p>Use the relevant repository’s security process for sensitive reports. Do not post private browsing data, access tokens, unpublished manuscripts, or personal information in a public issue.</p>
+    <p>Use the relevant repository’s private security process for sensitive reports. Do not post private browsing data, access tokens, unpublished manuscripts, or personal information in a public issue.</p>
   </article></main>
   <footer class="site-footer"><div class="footer-inner"><span>No product analytics are used on this site.</span><div class="footer-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a href="/security.html">Security</a></div></div></footer>
 </body>
