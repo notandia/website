@@ -6,9 +6,12 @@ Public website and documentation for the MDPI Filter project and its planned tra
 
 The site is intentionally dependency-free and deploys as static files on Cloudflare Pages.
 
-- Build command: leave empty
-- Build output directory: `/`
+- Framework preset: None
+- Build command: `exit 0`
+- Build output directory: `.`
+- Root directory: repository root
 - Production branch: `main`
+- Environment variables: none
 
 Pull-request deployments should remain on Cloudflare preview hostnames until a neutral product name and domain are cleared.
 
