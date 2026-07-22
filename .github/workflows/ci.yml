@@ -1,0 +1,39 @@
+name: Website CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+
+      - name: Verify static website
+        run: python3 scripts/verify_site.py
+
+      - name: Reject accidental secrets and private keys
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE --exclude-dir=.git --exclude='*.png' --exclude='*.jpg' --exclude='*.jpeg' \
+            '(BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY|AKIA[0-9A-Z]{16}|gh[pousr]_[A-Za-z0-9_]{20,})' .; then
+            echo 'Potential secret material detected.' >&2
+            exit 1
+          fi
+
+      - name: Verify site contains no remote scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE '<script[^>]+src=' --include='*.html' .; then
+            echo 'Remote or bundled JavaScript is not allowed in the initial static site.' >&2
+            exit 1
+          fi
