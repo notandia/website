@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy — MDPI Filter</title>
-  <meta name="description" content="Privacy principles and current data boundaries for MDPI Filter browser and Zotero tooling.">
+  <title>Privacy — Notandia</title>
+  <meta name="description" content="Privacy principles and current data boundaries for Notandia browser and Zotero tooling.">
   <link rel="canonical" href="https://mdpi-filter.pages.dev/privacy.html">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">MDPI Filter</a><div class="nav-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a aria-current="page" href="/privacy.html">Privacy</a><a href="/security.html">Security</a><a href="https://github.com/orgs/mdpi-filter/repositories">GitHub ↗</a></div></nav></header>
+  <header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">Notandia</a><div class="nav-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a aria-current="page" href="/privacy.html">Privacy</a><a href="/security.html">Security</a><a href="https://github.com/notandia">GitHub ↗</a></div></nav></header>
   <main><article class="prose">
     <p class="eyebrow">Privacy</p>
     <h1>Research checks should not become browsing surveillance.</h1>
-    <p>This overview describes the project’s common privacy boundary. Each extension has a platform-specific policy whose terminology, storage behavior, and permission flow match that platform.</p>
-    <p>MDPI Filter is an independent project and is not affiliated with or endorsed by MDPI AG.</p>
+    <p>This overview describes Notandia’s common privacy boundary. Each extension has a platform-specific policy whose terminology, storage behavior, and permission flow match that platform.</p>
+    <p>Notandia, previously distributed as MDPI Filter, is an independent open-source project. It is not affiliated with, authorized by, or endorsed by MDPI AG, Crossref, Retraction Watch, NCBI, browser vendors, or any publisher or data provider.</p>
 
     <h2>Platform-specific policies</h2>
     <ul>
@@ -25,14 +25,14 @@
     </ul>
 
     <h2>Local processing</h2>
-    <p>The browser extension processes page structure, links, citation text, and scholarly identifiers locally to identify MDPI-related content and prepare optional integrity checks. Settings are stored through the browser extension storage API. The project does not receive complete page text, browsing history, search queries, or extension telemetry.</p>
+    <p>The browser extension processes page structure, links, citation text, and scholarly identifiers locally to identify publisher-related content and prepare optional integrity checks. Settings are stored through the browser extension storage API. The project does not receive complete page text, browsing history, search queries, or extension telemetry.</p>
 
     <h2>NCBI detection lookups</h2>
-    <p>When enabled, NCBI lookups transmit only validated DOI, PMID, or PMCID values required for publication resolution. They omit browser credentials and referrer information and are deduplicated, batched, and rate-bounded. Disabling NCBI lookups causes zero related requests but may reduce detection accuracy.</p>
+    <p>When enabled, NCBI lookups transmit only validated DOI, PMID, or PMCID values required for publication resolution. Requests identify the application as Notandia, omit browser credentials and referrer information, and are deduplicated, batched, and rate-bounded. Disabling NCBI lookups causes zero related requests but may reduce MDPI-detection coverage.</p>
 
     <h2>Optional Crossref integrity lookups</h2>
-    <p>In versions that include the research-integrity preview, this feature is off by default. After explicit user consent, the extension may transmit normalized DOI identifiers to Crossref solely to retrieve scholarly metadata and formal post-publication update relationships. It does not send the page address, article text, citation text, search query, browsing history, account identifier, or analytics identifier.</p>
-    <p>Each scan attempts no more than 50 unique DOI lookups and starts no more than four requests per second. Disabling the feature stops new requests and cancels active or queued work where supported. Firefox may present an additional optional data-collection permission prompt; denial results in no Crossref requests.</p>
+    <p>This feature is off by default. After explicit user consent, the extension may transmit normalized DOI identifiers to Crossref solely to retrieve scholarly metadata and formal post-publication update relationships. It does not send the page address, article text, citation text, search query, browsing history, account identifier, or analytics identifier.</p>
+    <p>Each scan attempts no more than 50 unique DOI lookups and starts no more than four requests per second. Disabling the feature stops new requests and cancels active or queued work. Firefox presents an additional optional data-collection permission prompt; denial results in no Crossref requests.</p>
 
     <h2>Interpretation limits</h2>
     <p>The extension reports evidence found in checked records. A statement that no known signal was found is not a guarantee that a work is correct, reliable, or free of undiscovered concerns. Deferred, failed, and unresolved checks are disclosed rather than treated as clear.</p>
@@ -54,6 +54,6 @@
     <h2>Reporting a privacy issue</h2>
     <p>Use the relevant repository’s private security process for sensitive reports. Do not post private browsing data, access tokens, unpublished manuscripts, or personal information in a public issue.</p>
   </article></main>
-  <footer class="site-footer"><div class="footer-inner"><span>No product analytics are used on this site.</span><div class="footer-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a href="/security.html">Security</a></div></div></footer>
+  <footer class="site-footer"><div class="footer-inner"><span>Notandia · No product analytics are used on this site.</span><div class="footer-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a href="/security.html">Security</a></div></div></footer>
 </body>
 </html>
