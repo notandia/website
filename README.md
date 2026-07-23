@@ -1,6 +1,6 @@
-# MDPI Filter website
+# Notandia website
 
-Public website and documentation for the MDPI Filter project and its planned transition into a broader, explainable research-integrity suite.
+Public website, methodology, privacy policies, and security documentation for Notandia, previously distributed as MDPI Filter.
 
 ## Hosting
 
@@ -13,7 +13,7 @@ The site is intentionally dependency-free and deploys as static files on Cloudfl
 - Production branch: `main`
 - Environment variables: none
 
-Pull-request deployments should remain on Cloudflare preview hostnames until a neutral product name and domain are cleared.
+The current production hostname remains `mdpi-filter.pages.dev` temporarily so existing store privacy-policy URLs stay valid. A cleared Notandia custom domain should later become canonical through a path-preserving redirect migration; do not delete or abandon the old hostname.
 
 ## Local preview
 
@@ -36,10 +36,18 @@ The verifier checks required pages, internal links, security headers, canonical 
 The website must always distinguish:
 
 - functionality currently released in browser stores;
-- hardened or tested preview functionality available only on GitHub;
+- hardened or tested release-candidate functionality available on GitHub;
 - planned functionality that is not yet shipped.
 
 It must never describe the absence of a warning as proof that an article, journal, or publisher is reliable.
+
+## Identity boundary
+
+- Public product name: **Notandia**.
+- Transition wording: **Previously MDPI Filter**.
+- MDPI may still be named when describing the existing MDPI-detection feature.
+- Notandia must be described as independent and unaffiliated with publishers, browser vendors, and data providers.
+- Legacy store IDs, add-on IDs, update identities, and the temporary Pages hostname may remain where continuity requires them.
 
 ## Licensing
 
