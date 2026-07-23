@@ -3,25 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MDPI Filter — Explainable research-integrity tooling</title>
-  <meta name="description" content="Open-source browser and Zotero tooling for identifying MDPI publications and building explainable post-publication integrity signals.">
+  <title>Notandia — Open-source context for scholarly literature</title>
+  <meta name="description" content="Notandia is open-source browser and Zotero software for publisher context and explainable post-publication signals in scholarly literature.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://mdpi-filter.pages.dev/">
   <link rel="stylesheet" href="/styles.css">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="MDPI Filter — Explainable research-integrity tooling">
-  <meta property="og:description" content="Open-source browser and Zotero tooling with explicit evidence, privacy, and release boundaries.">
+  <meta property="og:title" content="Notandia — Open-source context for scholarly literature">
+  <meta property="og:description" content="See publisher context and formal post-publication signals without hidden quality scores or product analytics.">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="/">MDPI Filter</a>
+      <a class="brand" href="/">Notandia</a>
       <div class="nav-links">
         <a aria-current="page" href="/">Home</a>
         <a href="/methodology.html">Methodology</a>
         <a href="/privacy.html">Privacy</a>
         <a href="/security.html">Security</a>
-        <a href="https://github.com/orgs/mdpi-filter/repositories">GitHub ↗</a>
+        <a href="https://github.com/notandia">GitHub ↗</a>
       </div>
     </nav>
   </header>
@@ -29,40 +29,40 @@
   <main>
     <section class="hero">
       <p class="eyebrow">Open source · Browser and Zotero tooling</p>
-      <h1>Research warnings should explain themselves.</h1>
-      <p class="lede">MDPI Filter currently helps researchers identify and navigate MDPI publications and citations. The project is evolving toward a broader evidence-backed integrity layer that distinguishes formal article events from contextual journal or publisher concerns.</p>
+      <h1>See what is worth noting while you read.</h1>
+      <p class="lede">Notandia adds transparent publisher context and formal post-publication signals to scholarly literature. It exposes evidence, chronology, provenance, and coverage instead of assigning opaque quality scores.</p>
       <div class="actions">
         <a class="button primary" href="https://chromewebstore.google.com/detail/mdpi-filter/comknkeimaaadpiopddjoknflbmjeccp">Install for Chrome ↗</a>
         <a class="button" href="https://microsoftedge.microsoft.com/addons/detail/mdpi-filter/efonlkldplkaeekpiajloajjmkappjgi">Install for Edge ↗</a>
-        <a class="button" href="https://github.com/mdpi-filter/mdpi-filter-zotero">Zotero source ↗</a>
+        <a class="button" href="https://github.com/notandia/zotero-plugin">Zotero source ↗</a>
       </div>
-      <div class="notice"><strong>Release boundary:</strong> Chrome and Edge store versions are currently MDPI-focused. Broader integrity signals and Safari/Firefox support are active development work, not yet public store features.</div>
+      <div class="notice"><strong>Transition:</strong> Notandia was previously distributed as MDPI Filter. Existing Chrome, Edge, Firefox, and Zotero technical identities are retained where required for updates and user-data continuity.</div>
     </section>
 
     <section aria-labelledby="state-heading">
       <p class="eyebrow">Current state</p>
-      <h2 id="state-heading">Released, tested, and planned are shown separately.</h2>
+      <h2 id="state-heading">Released, tested, and planned capabilities remain explicit.</h2>
       <div class="grid">
         <article class="card">
-          <span class="status released">Released</span>
-          <h3>MDPI detection</h3>
+          <span class="status released">Released foundation</span>
+          <h3>Publisher detection</h3>
           <p>Highlight, hide, count, and navigate MDPI results and citations across supported scholarly-search and publisher pages.</p>
         </article>
         <article class="card">
-          <span class="status preview">Tested preview</span>
-          <h3>Article integrity events</h3>
-          <p>Work is underway on explainable timelines for retractions, concerns, corrections, reinstatements, withdrawals, and duplicate-publication findings.</p>
+          <span class="status preview">Release candidate</span>
+          <h3>Formal article events</h3>
+          <p>Opt-in DOI checks expose retractions, concerns, corrections, reinstatements, withdrawals, removals, and duplicate-publication findings with provenance and chronology.</p>
         </article>
         <article class="card">
           <span class="status roadmap">Roadmap</span>
-          <h3>Safari, Firefox, and shared evidence</h3>
-          <p>One canonical browser source is planned for Chrome, Edge, Firefox desktop/Android, and Safari on macOS, iOS, and iPadOS.</p>
+          <h3>Broader contextual coverage</h3>
+          <p>The architecture supports Chrome, Edge, Firefox, Safari, and Zotero while keeping article events separate from journal or publisher context.</p>
         </article>
       </div>
     </section>
 
     <section aria-labelledby="signals-heading">
-      <p class="eyebrow">Proposed work-level taxonomy</p>
+      <p class="eyebrow">Work-level taxonomy</p>
       <h2 id="signals-heading">Color supports the meaning; it never replaces the label.</h2>
       <p class="section-intro">Formal publication events require different semantics. A correction is not a retraction, and a reinstatement changes the current state without erasing the historical timeline.</p>
       <div class="signal-list">
@@ -80,15 +80,21 @@
       <h2 id="principles-heading">Evidence before verdicts.</h2>
       <div class="grid">
         <article class="card"><h3>Scope is explicit</h3><p>Article events, journal context, publisher context, and identity warnings remain separate.</p></article>
-        <article class="card"><h3>Coverage is visible</h3><p>Checked, unresolved, failed, and deferred identifiers are reported instead of silently treated as clean.</p></article>
-        <article class="card"><h3>Provenance is inspectable</h3><p>Warnings should expose source, identifier, event chronology, retrieval date, and applicable exceptions.</p></article>
+        <article class="card"><h3>Coverage is visible</h3><p>Checked, unresolved, failed, and deferred identifiers are reported instead of silently treated as clear.</p></article>
+        <article class="card"><h3>Provenance is inspectable</h3><p>Signals expose source, identifier, event chronology, retrieval date, and applicable exceptions.</p></article>
       </div>
+    </section>
+
+    <section aria-labelledby="trust-heading">
+      <p class="eyebrow">Trust boundaries</p>
+      <h2 id="trust-heading">Open source. No product analytics. No hidden score.</h2>
+      <p class="section-intro">Notandia is independently developed and is not affiliated with, authorized by, or endorsed by MDPI AG, Crossref, Retraction Watch, NCBI, browser vendors, or any publisher or data provider.</p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span>Open-source research-integrity tooling. Current name is provisional pending a broader rebrand.</span>
+      <span>Notandia · Previously MDPI Filter · Open-source scholarly-context software.</span>
       <div class="footer-links">
         <a href="/methodology.html">Methodology</a>
         <a href="/privacy.html">Privacy</a>
