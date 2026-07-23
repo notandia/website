@@ -3,31 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Methodology — MDPI Filter</title>
-  <meta name="description" content="Methodology and evidence model for MDPI Filter and its planned research-integrity expansion.">
+  <title>Methodology — Notandia</title>
+  <meta name="description" content="Methodology and evidence model for Notandia's open-source scholarly-context software.">
   <link rel="canonical" href="https://mdpi-filter.pages.dev/methodology.html">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">MDPI Filter</a><div class="nav-links"><a href="/">Home</a><a aria-current="page" href="/methodology.html">Methodology</a><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a><a href="https://github.com/orgs/mdpi-filter/repositories">GitHub ↗</a></div></nav></header>
+  <header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">Notandia</a><div class="nav-links"><a href="/">Home</a><a aria-current="page" href="/methodology.html">Methodology</a><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a><a href="https://github.com/notandia">GitHub ↗</a></div></nav></header>
   <main><article class="prose">
     <p class="eyebrow">Methodology</p>
     <h1>Signals are evidence records, not automatic verdicts.</h1>
-    <p>The project uses separate models for <strong>formal work-level events</strong> and <strong>contextual venue-level evidence</strong>. This avoids treating a corrected article, a retracted article, a journal identity warning, and a mixed-record publisher as the same kind of problem.</p>
+    <p>Notandia uses separate models for <strong>formal work-level events</strong> and <strong>contextual venue-level evidence</strong>. This avoids treating a corrected article, a retracted article, a journal identity warning, and a mixed-record publisher as the same kind of problem.</p>
 
     <h2>Work-level events</h2>
-    <p>Planned normalized categories include retraction, expression of concern, correction, reinstatement, withdrawal or removal, and duplicate-publication findings. The event timeline is preserved. A reinstatement changes the current state without deleting the earlier retraction.</p>
+    <p>Normalized categories include retraction, expression of concern, correction, reinstatement, withdrawal or removal, and duplicate-publication findings. The event timeline is preserved. A reinstatement changes the current state without deleting the earlier retraction.</p>
 
     <h2>Venue context</h2>
-    <p>Journal and publisher assessments are source-native context. A database classification, community assessment, indexing claim, or historical concern is displayed with its scope and provenance. No single source becomes a universal definition of “predatory.”</p>
+    <p>Journal and publisher assessments are source-native context. A database classification, community assessment, indexing claim, or historical concern must be displayed with its scope and provenance. No single source becomes a universal definition of “predatory.”</p>
 
     <h2>Identity resolution</h2>
-    <p>Matching should prioritize DOI, ISSN or ISSN-L, canonical domain, and exact publisher identity. Title-only matches are too ambiguous for high-confidence warnings. Historical transfers, title changes, hijacked journals, and explicit false-positive exclusions must be supported.</p>
+    <p>Matching prioritizes DOI, ISSN or ISSN-L, canonical domain, and exact publisher identity. Title-only matches are too ambiguous for high-confidence warnings. Historical transfers, title changes, hijacked journals, and explicit false-positive exclusions must be supported.</p>
 
     <h2>Coverage</h2>
-    <p>The interface must distinguish checked, unresolved, failed, and deferred identifiers. “No known signal” means only that the checked sources returned no matching record. It does not prove that a work or venue is reliable.</p>
+    <p>The interface distinguishes checked, unresolved, failed, and deferred identifiers. “No known signal” means only that the checked sources returned no matching record. It does not prove that a work or venue is reliable.</p>
 
-    <h2>Planned evidence sources</h2>
+    <h2>Evidence sources</h2>
     <table>
       <thead><tr><th>Source</th><th>Intended use</th><th>Constraint</th></tr></thead>
       <tbody>
@@ -40,8 +40,11 @@
     </table>
 
     <h2>Corrections and appeals</h2>
-    <p>Every venue-level warning must be traceable to evidence and open to correction. Conflicting sources should remain visible rather than silently resolved. A future governance process will document review dates, changes, exceptions, and appeals.</p>
+    <p>Every venue-level warning must be traceable to evidence and open to correction. Conflicting sources should remain visible rather than silently resolved. Governance should document review dates, changes, exceptions, and appeals.</p>
+
+    <h2>Independence</h2>
+    <p>Notandia is independently developed and open source. It is not affiliated with, authorized by, or endorsed by any publisher, browser vendor, or data provider.</p>
   </article></main>
-  <footer class="site-footer"><div class="footer-inner"><span>Original documentation: CC BY-SA 4.0.</span><div class="footer-links"><a href="/">Home</a><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a></div></div></footer>
+  <footer class="site-footer"><div class="footer-inner"><span>Notandia · Original documentation: CC BY-SA 4.0.</span><div class="footer-links"><a href="/">Home</a><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a></div></div></footer>
 </body>
 </html>

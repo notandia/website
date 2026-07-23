@@ -3,36 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chrome privacy policy — MDPI Filter</title>
-  <meta name="description" content="Privacy policy for the MDPI Filter extension for Google Chrome.">
+  <title>Chrome privacy policy — Notandia</title>
+  <meta name="description" content="Privacy policy for the Notandia extension for Google Chrome.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://mdpi-filter.pages.dev/privacy/chrome/">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">MDPI Filter</a><div class="nav-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a aria-current="page" href="/privacy.html">Privacy</a><a href="/security.html">Security</a></div></nav></header>
+  <header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">Notandia</a><div class="nav-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a aria-current="page" href="/privacy.html">Privacy</a><a href="/security.html">Security</a></div></nav></header>
   <main><article class="prose">
     <p class="eyebrow">Google Chrome extension</p>
-    <h1>Privacy policy for MDPI Filter</h1>
+    <h1>Privacy policy for Notandia</h1>
     <p><strong>Last updated:</strong> July 23, 2026</p>
-    <p>MDPI Filter identifies MDPI publications and, in versions that include the optional research-integrity preview, can check scholarly DOI identifiers for formal post-publication updates. Most processing occurs locally in Chrome.</p>
-    <p>MDPI Filter is an independent project and is not affiliated with or endorsed by MDPI AG.</p>
+    <p>Notandia, previously distributed as MDPI Filter, identifies publisher-related content and can optionally check scholarly DOI identifiers for formal post-publication updates. Most processing occurs locally in Chrome.</p>
+    <p>Notandia is an independent open-source project and is not affiliated with, authorized by, or endorsed by MDPI AG, Crossref, Retraction Watch, NCBI, Google, or any publisher or data provider.</p>
 
     <h2>Information handled locally</h2>
     <p>The extension stores user preferences with the Chrome extension storage API. Chrome may synchronize those preferences when Chrome Sync is enabled. Content scripts inspect text, links, citation identifiers, and document structure on HTTPS pages you visit.</p>
     <p>The extension may extract DOI, PMID, and PMCID publication identifiers. Complete page content, browsing history, search queries, and reference text are not sent to the developer or to an analytics service. Detection results and reference previews are held in bounded temporary memory and are not used for tracking.</p>
 
     <h2>NCBI detection lookups</h2>
-    <p>When NCBI lookups are enabled, the extension sends only validated DOI, PMID, or PMCID values to the NCBI ID Converter endpoint over HTTPS. Requests identify the application as <code>mdpi-filter</code>, omit browser credentials and referrer information, and are deduplicated, batched, and rate-bounded. NCBI necessarily receives the identifiers and the IP address used for ordinary network communication.</p>
-    <p>NCBI lookups can be disabled in advanced settings. Disabling them results in no NCBI lookup requests but may reduce MDPI detection accuracy.</p>
+    <p>When NCBI lookups are enabled, the extension sends only validated DOI, PMID, or PMCID values to the NCBI ID Converter endpoint over HTTPS. Requests identify the application as <code>notandia</code>, omit browser credentials and referrer information, and are deduplicated, batched, and rate-bounded. NCBI necessarily receives the identifiers and the IP address used for ordinary network communication.</p>
+    <p>NCBI lookups can be disabled in advanced settings. Disabling them results in no NCBI lookup requests but may reduce MDPI-detection coverage.</p>
 
     <h2>Optional Crossref integrity lookups</h2>
     <p>The research-integrity feature is off by default. When the user explicitly enables it, the extension sends only normalized DOI identifiers to the Crossref REST API to retrieve scholarly metadata and formal update relationships, such as retractions, expressions of concern, corrections, reinstatements, withdrawals or removals, and duplicate-publication notices.</p>
     <p>Crossref requests place the DOI in the HTTPS endpoint, omit browser credentials, use a no-referrer policy, and do not include the page address, article text, citation text, search query, account identifier, or analytics identifier. Each scan attempts no more than 50 unique DOI lookups and starts no more than four requests per second. Crossref necessarily receives the DOI and the IP address used for ordinary network communication.</p>
-    <p>Disabling integrity lookups stops new requests and cancels active or queued requests where the browser permits. A result stating that no signal was found means only that none was found in the checked records; it is not a guarantee of research quality or reliability.</p>
+    <p>Disabling integrity lookups stops new requests and cancels active or queued requests. A result stating that no signal was found means only that none was found in the checked records; it is not a guarantee of research quality or reliability.</p>
 
     <h2>Issue reports</h2>
-    <p>Selecting <strong>Report a detection issue</strong> opens a public GitHub issue form. The extension pre-fills only the page origin and path, browser and extension version, selected filter mode, and whether integrity lookups are enabled; it removes query parameters and fragments. Nothing is submitted automatically, and the user can edit or discard the report.</p>
+    <p>Selecting <strong>Report a detection issue</strong> opens a public GitHub issue form in <code>notandia/browser-extension</code>. The extension pre-fills only the page origin and path, browser and extension version, and whether integrity lookups are enabled; it removes query parameters and fragments. Nothing is submitted automatically, and the user can edit or discard the report.</p>
 
     <h2>No analytics or commercial sharing</h2>
     <p>The extension contains no advertising or product analytics service. The developer does not receive extension telemetry and does not sell, rent, or share page content, browsing history, publication identifiers, or preferences for advertising, profiling, or data-broker purposes.</p>
@@ -46,8 +46,8 @@
     </ul>
 
     <h2>Security and contact</h2>
-    <p>The extension uses Manifest V3, a self-only content security policy, no remote executable code, validated cross-context messages, bounded inputs and caches, and no shipped runtime npm dependencies. Sensitive vulnerabilities should be reported through the private GitHub Security Advisory channel. Non-sensitive privacy questions may be submitted through the project’s public issue tracker.</p>
+    <p>The extension uses Manifest V3, a self-only content security policy, no remote executable code, validated cross-context messages, bounded inputs and caches, and no shipped runtime npm dependencies. Sensitive vulnerabilities should be reported through the private GitHub Security Advisory channel.</p>
   </article></main>
-  <footer class="site-footer"><div class="footer-inner"><span>No product analytics are used.</span><div class="footer-links"><a href="/">Home</a><a href="/privacy.html">Privacy overview</a><a href="/security.html">Security</a></div></div></footer>
+  <footer class="site-footer"><div class="footer-inner"><span>Notandia · No product analytics are used.</span><div class="footer-links"><a href="/">Home</a><a href="/privacy.html">Privacy overview</a><a href="/security.html">Security</a></div></div></footer>
 </body>
 </html>
