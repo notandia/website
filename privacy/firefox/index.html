@@ -15,30 +15,39 @@
     <p class="eyebrow">Firefox extension</p>
     <h1>Privacy policy for MDPI Filter</h1>
     <p><strong>Last updated:</strong> July 23, 2026</p>
-    <p>MDPI Filter identifies MDPI publications in search results, bibliographies, inline citations, cited-by lists, and similar-article lists. Most processing occurs locally in Firefox.</p>
+    <p>MDPI Filter identifies MDPI publications and, in versions that include the optional research-integrity preview, can check scholarly DOI identifiers for formal post-publication updates. Most processing occurs locally in Firefox.</p>
+    <p>MDPI Filter is an independent project and is not affiliated with or endorsed by MDPI AG.</p>
 
-    <h2>Information handled</h2>
-    <p>The extension stores user preferences with the Firefox extension storage API. Firefox may synchronize those preferences when the user enables extension synchronization through a Mozilla account. Content scripts inspect text, links, citation identifiers, and document structure on HTTPS pages you visit. Complete page content, browsing history, and reference text are not transmitted to the developer or to an analytics service.</p>
-    <p>The extension may extract DOI, PMID, and PMCID publication identifiers. Detection results and reference previews are held in bounded temporary memory caches and are not used for tracking.</p>
+    <h2>Information handled locally</h2>
+    <p>The extension stores user preferences with the Firefox extension storage API. Firefox may synchronize those preferences when the user enables extension synchronization through a Mozilla account. Content scripts inspect text, links, citation identifiers, and document structure on HTTPS pages for which the extension has access.</p>
+    <p>The extension may extract DOI, PMID, and PMCID publication identifiers. Complete page content, browsing history, search queries, and reference text are not sent to the developer or to an analytics service. Detection results and reference previews are held in bounded temporary memory and are not used for tracking.</p>
 
-    <h2>External communications</h2>
+    <h2>NCBI detection lookups</h2>
     <p>When NCBI lookups are enabled, the extension sends only validated DOI, PMID, or PMCID values to the NCBI ID Converter endpoint over HTTPS. Requests identify the application as <code>mdpi-filter</code>, omit browser credentials and referrer information, and are deduplicated, batched, and rate-bounded. NCBI necessarily receives the identifiers and the IP address used for ordinary network communication.</p>
-    <p>NCBI lookups can be disabled in advanced settings. Disabling them results in no NCBI lookup requests but may reduce detection accuracy.</p>
-    <p>Selecting <strong>Report Filter Issue</strong> opens a public GitHub issue form. The extension pre-fills only the page origin and path, Firefox and extension version, and filter mode; it removes query parameters and fragments. Nothing is submitted automatically, and the user can edit or discard the report.</p>
+    <p>NCBI lookups can be disabled in advanced settings. Disabling them results in no NCBI lookup requests but may reduce MDPI detection accuracy.</p>
+
+    <h2>Optional Crossref integrity lookups</h2>
+    <p>The research-integrity feature is off by default. Enabling it is a user action and Firefox may present an additional optional permission prompt describing the transmission of website-derived DOI identifiers. If the user denies that permission, no Crossref integrity requests are made.</p>
+    <p>After consent, the extension sends only normalized DOI identifiers to the Crossref REST API to retrieve scholarly metadata and formal update relationships, such as retractions, expressions of concern, corrections, reinstatements, withdrawals or removals, and duplicate-publication notices.</p>
+    <p>Crossref requests place the DOI in the HTTPS endpoint, omit browser credentials, use a no-referrer policy, and do not include the page address, article text, citation text, search query, account identifier, or analytics identifier. Each scan attempts no more than 50 unique DOI lookups and starts no more than four requests per second. Crossref necessarily receives the DOI and the IP address used for ordinary network communication.</p>
+    <p>Disabling integrity lookups stops new requests, cancels active or queued requests where Firefox permits, and removes the optional data-collection permission where supported. A result stating that no signal was found means only that none was found in the checked records; it is not a guarantee of research quality or reliability.</p>
+
+    <h2>Issue reports</h2>
+    <p>Selecting <strong>Report a detection issue</strong> opens a public GitHub issue form. The extension pre-fills only the page origin and path, Firefox and extension version, selected filter mode, and whether integrity lookups are enabled; it removes query parameters and fragments. Nothing is submitted automatically, and the user can edit or discard the report.</p>
 
     <h2>No analytics or commercial sharing</h2>
-    <p>The extension contains no advertising or analytics service. The developer does not receive extension telemetry and does not sell, rent, or share page content, browsing history, publication identifiers, or preferences for advertising, profiling, or data-broker purposes.</p>
+    <p>The extension contains no advertising or product analytics service. The developer does not receive extension telemetry and does not sell, rent, or share page content, browsing history, publication identifiers, or preferences for advertising, profiling, or data-broker purposes.</p>
 
     <h2>Retention and control</h2>
     <ul>
       <li>Preferences remain in Firefox extension storage until changed, cleared, or the extension is removed.</li>
-      <li>Per-tab reference data is cleared when navigation begins or the tab closes.</li>
-      <li>The extension does not maintain a persistent browsing-history database.</li>
-      <li>Users can disable NCBI lookups, change site access through Firefox controls, clear extension data, disable the extension, or uninstall it.</li>
+      <li>Per-tab reference and integrity-display data is cleared when navigation begins or the tab closes.</li>
+      <li>Crossref lookup responses may be cached only in extension memory for up to 24 hours and are not stored as a persistent browsing-history database.</li>
+      <li>Users can disable NCBI and integrity lookups, deny or remove optional permissions, change site access through Firefox controls, clear extension data, disable the extension, or uninstall it.</li>
     </ul>
 
     <h2>Security and contact</h2>
-    <p>The extension uses Manifest V3, a self-only content security policy, no remote executable code, validated cross-context messages, and no shipped runtime npm dependencies. Sensitive vulnerabilities should be reported through the private GitHub Security Advisory channel. Non-sensitive privacy questions may be submitted through the project’s public issue tracker.</p>
+    <p>The extension uses Manifest V3-compatible components, a self-only content security policy, no remote executable code, validated cross-context messages, bounded inputs and caches, and no shipped runtime npm dependencies. Sensitive vulnerabilities should be reported through the private GitHub Security Advisory channel. Non-sensitive privacy questions may be submitted through the project’s public issue tracker.</p>
   </article></main>
   <footer class="site-footer"><div class="footer-inner"><span>No product analytics are used.</span><div class="footer-links"><a href="/">Home</a><a href="/privacy.html">Privacy overview</a><a href="/security.html">Security</a></div></div></footer>
 </body>
