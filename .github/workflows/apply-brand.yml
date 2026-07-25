@@ -1,0 +1,39 @@
+name: Apply Notandia website identity
+
+on:
+  push:
+    branches:
+      - brand/apply-notandia-identity
+    paths:
+      - scripts/apply-notandia-brand.py
+      - .github/workflows/apply-brand.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: brand/apply-notandia-identity
+          persist-credentials: true
+
+      - name: Apply brand migration
+        run: python3 scripts/apply-notandia-brand.py
+
+      - name: Commit generated website changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add assets index.html methodology.html privacy.html security.html privacy/*/index.html styles.css
+          if git diff --cached --quiet; then
+            echo "Website identity is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "brand: apply Notandia identity across the website"
+          git push origin HEAD:brand/apply-notandia-identity
