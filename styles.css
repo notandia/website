@@ -1,12 +1,12 @@
 :root {
   color-scheme: light dark;
-  --bg: #f7f8fb;
+  --bg: #f6f8fb;
   --surface: #ffffff;
-  --ink: #172033;
-  --muted: #5c667a;
+  --ink: #12263f;
+  --muted: #48627a;
   --line: #dbe0e8;
-  --accent: #3457d5;
-  --accent-soft: #e9edff;
+  --accent: #315f86;
+  --accent-soft: #e8f0f6;
   --danger: #b42318;
   --warning: #b54708;
   --success: #067647;
@@ -53,7 +53,8 @@ code { font-family: "SFMono-Regular", Consolas, monospace; }
   justify-content: space-between;
   gap: 20px;
 }
-.brand { color: var(--ink); font-weight: 800; text-decoration: none; letter-spacing: -0.02em; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 800; text-decoration: none; letter-spacing: -0.02em; }
+.brand img { width: 32px; height: 32px; flex: 0 0 auto; }
 .nav-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 14px; }
 .nav-links a { color: var(--muted); text-decoration: none; }
 .nav-links a[aria-current="page"] { color: var(--ink); font-weight: 700; }
