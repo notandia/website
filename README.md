@@ -13,7 +13,7 @@ The site is intentionally dependency-free and deploys as static files on Cloudfl
 - Production branch: `main`
 - Environment variables: none
 
-The current production hostname remains `mdpi-filter.pages.dev` temporarily so existing store privacy-policy URLs stay valid. A cleared Notandia custom domain should later become canonical through a path-preserving redirect migration; do not delete or abandon the old hostname.
+The current production hostname remains `mdpi-filter.pages.dev` so existing store privacy-policy and support URLs stay valid. Buying or attaching a Notandia custom domain may remain deferred. A future domain migration must preserve every path through redirects; do not delete or abandon the current hostname.
 
 ## Local preview
 
@@ -35,19 +35,42 @@ The verifier checks required pages, internal links, security headers, canonical 
 
 The website must always distinguish:
 
-- functionality currently released in browser stores;
-- hardened or tested release-candidate functionality available on GitHub;
-- planned functionality that is not yet shipped.
+- functionality in the currently published Chrome and Edge MDPI Filter packages;
+- Notandia functionality implemented and verified in current source but awaiting manual browser, upgrade, and store validation;
+- planned functionality that is not yet implemented.
 
-It must never describe the absence of a warning as proof that an article, journal, or publisher is reliable.
+The website must not imply that the new Notandia watchlist interface is already available through the stores until those existing listings have been updated.
+
+## Evidence and interpretation boundaries
+
+The website must keep these concepts separate:
+
+1. **Publisher identity evidence** — domains, DOI prefixes, and validated compatibility evidence.
+2. **User-selected publisher treatment** — context only, badge, highlight, dim, hide, or disabled.
+3. **Formal work-level events** — retractions, concerns, corrections, reinstatements, withdrawals/removals, and duplicate-publication findings.
+
+MDPI and Frontiers are built-in profiles in current source, enabled and highlighted by default, and independently deactivable. This is a product default and user preference—not an official statement that every article from either publisher is unreliable.
+
+The website must never describe a publisher watchlist match as an objective quality score or the absence of a warning as proof that an article, journal, or publisher is reliable.
+
+## Privacy boundary
+
+- Publisher profiles and actions are processed locally and stored through browser extension storage.
+- Custom profiles are declarative and cannot contain executable scripts or selectors.
+- NCBI requests contain only validated DOI, PMID, or PMCID identifiers.
+- Crossref integrity requests are off by default and contain only normalized DOI identifiers; direct and reverse update queries are both disclosed.
+- Reports omit query strings, fragments, citation text, and DOI lists unless the user explicitly adds them.
+- The site and extension use no product analytics or advertising.
 
 ## Identity boundary
 
 - Public product name: **Notandia**.
 - Transition wording: **Previously MDPI Filter**.
-- MDPI may still be named when describing the existing MDPI-detection feature.
+- Chrome and Edge keep their released store identities.
+- Firefox is unreleased and plans to use `browser-extension@notandia.github.io` for its first submission.
+- MDPI and Frontiers may be named when describing their built-in publisher profiles.
 - Notandia must be described as independent and unaffiliated with publishers, browser vendors, and data providers.
-- Legacy store IDs, add-on IDs, update identities, and the temporary Pages hostname may remain where continuity requires them.
+- Legacy store IDs, update identities, and the current Pages hostname may remain where continuity requires them.
 
 ## Licensing
 
