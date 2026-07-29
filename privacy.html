@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy — Notandia</title>
-  <meta name="description" content="Privacy principles and current data boundaries for Notandia browser and Zotero tooling.">
+  <meta name="description" content="Privacy principles and current data boundaries for Notandia publisher profiles and scholarly integrity tooling.">
   <link rel="canonical" href="https://mdpi-filter.pages.dev/privacy.html">
   <link rel="icon" href="/assets/notandia-symbol.svg" type="image/svg+xml">
   <meta name="theme-color" content="#12263F">
@@ -14,9 +14,9 @@
   <header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/notandia-symbol.svg" alt="" width="32" height="32"><span>Notandia</span></a><div class="nav-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a aria-current="page" href="/privacy.html">Privacy</a><a href="/security.html">Security</a><a href="https://github.com/notandia">GitHub ↗</a></div></nav></header>
   <main><article class="prose">
     <p class="eyebrow">Privacy</p>
-    <h1>Research checks should not become browsing surveillance.</h1>
-    <p>This overview describes Notandia’s common privacy boundary. Each extension has a platform-specific policy whose terminology, storage behavior, and permission flow match that platform.</p>
-    <p>Notandia, previously distributed as MDPI Filter, is an independent open-source project. It is not affiliated with, authorized by, or endorsed by MDPI AG, Crossref, Retraction Watch, NCBI, browser vendors, or any publisher or data provider.</p>
+    <h1>Research context should not become browsing surveillance.</h1>
+    <p>This overview describes Notandia’s common privacy boundary. Each browser has a platform-specific policy whose terminology, storage behavior, and permission flow match that platform.</p>
+    <p>Notandia, previously distributed as MDPI Filter, is independent and open source. It is not affiliated with, authorized by, or endorsed by MDPI AG, Frontiers Media SA, Crossref, Retraction Watch, NCBI, browser vendors, or any publisher or data provider.</p>
 
     <h2>Platform-specific policies</h2>
     <ul>
@@ -26,25 +26,29 @@
       <li><a href="/privacy/safari/">Safari Web Extension privacy policy</a></li>
     </ul>
 
-    <h2>Local processing</h2>
-    <p>The browser extension processes page structure, links, citation text, and scholarly identifiers locally to identify publisher-related content and prepare optional integrity checks. Settings are stored through the browser extension storage API. The project does not receive complete page text, browsing history, search queries, or extension telemetry.</p>
+    <h2>Local publisher profiles</h2>
+    <p>The extension processes page structure, links, citation text, scholarly identifiers, and publisher evidence locally. Built-in MDPI and Frontiers preferences and custom publisher names, domains, DOI prefixes, actions, colors, and confidence policies remain in browser extension storage. They are not sent to Notandia, Crossref, NCBI, publishers, or an analytics provider.</p>
+    <p>Custom profiles are validated declarative data. They cannot contain executable scripts, remote code, or arbitrary page selectors.</p>
 
-    <h2>NCBI detection lookups</h2>
-    <p>When enabled, NCBI lookups transmit only validated DOI, PMID, or PMCID values required for publication resolution. Requests identify the application as Notandia, omit browser credentials and referrer information, and are deduplicated, batched, and rate-bounded. Disabling NCBI lookups causes zero related requests but may reduce MDPI-detection coverage.</p>
+    <h2>NCBI metadata lookups</h2>
+    <p>When enabled, NCBI lookups transmit only validated DOI, PMID, or PMCID values needed to resolve publication metadata. Requests identify the application as <code>notandia</code>, omit browser credentials and referrer information, and are deduplicated, batched, and rate-bounded. Disabling NCBI lookups causes zero related requests but may reduce publisher-detection coverage when a page exposes only indirect identifiers.</p>
 
     <h2>Optional Crossref integrity lookups</h2>
-    <p>This feature is off by default. After explicit user consent, the extension may transmit normalized DOI identifiers to Crossref solely to retrieve scholarly metadata and formal post-publication update relationships. It does not send the page address, article text, citation text, search query, browsing history, account identifier, or analytics identifier.</p>
-    <p>Each scan attempts no more than 50 unique DOI lookups and starts no more than four requests per second. Disabling the feature stops new requests and cancels active or queued work. Firefox presents an additional optional data-collection permission prompt; denial results in no Crossref requests.</p>
+    <p>This feature is off by default. After explicit user consent, the extension may transmit normalized DOI identifiers to Crossref solely to retrieve scholarly metadata and formal post-publication relationships. It may check both the DOI’s direct record and a reverse <code>updates:&lt;doi&gt;</code> query for separately registered notices.</p>
+    <p>It does not send the page address, article text, citation text, publisher-profile settings, search query, browsing history, account identifier, or analytics identifier. Each scan attempts no more than 50 unique DOI records and starts no more than four requests per second. Disabling the feature stops new requests and cancels active or queued work. Firefox requires an additional optional website-content permission.</p>
+
+    <h2>Issue reports</h2>
+    <p>Choosing <strong>Report article/context issue</strong> opens an editable public GitHub draft. It may prefill the selected category, sanitized page origin and path, extension and browser version, IDs of enabled publisher profiles, and whether integrity checks are enabled. Query parameters, fragments, citation text, and DOI lists are omitted unless the user adds them.</p>
 
     <h2>Interpretation limits</h2>
-    <p>The extension reports evidence found in checked records. A statement that no known signal was found is not a guarantee that a work is correct, reliable, or free of undiscovered concerns. Deferred, failed, and unresolved checks are disclosed rather than treated as clear.</p>
+    <p>A publisher-profile match is a user-selected display rule, not an objective quality score. “No known integrity signal” means only that none was found in checked records; it is not a guarantee that a work or publisher is reliable.</p>
 
     <h2>Retention and user control</h2>
     <ul>
-      <li>Preferences remain in browser extension storage until changed, cleared, or the extension is removed.</li>
-      <li>Per-tab reference and display data is cleared when navigation begins or a tab closes.</li>
-      <li>Integrity lookup responses may be cached only in extension memory for up to 24 hours and are not used to create a persistent browsing-history database.</li>
-      <li>Users can disable network-assisted features, change website access, deny optional permissions, clear extension data, disable the extension, or uninstall it.</li>
+      <li>Publisher profiles and preferences remain in extension storage until changed, cleared, or the extension is removed.</li>
+      <li>Per-tab publisher, reference, and integrity data is cleared when navigation begins or a tab closes.</li>
+      <li>Crossref responses may be cached only in extension memory for up to 24 hours and are not used to create persistent browsing history.</li>
+      <li>Users can disable any publisher profile, disable network-assisted features, deny optional permissions, clear extension data, disable the extension, or uninstall it.</li>
     </ul>
 
     <h2>No analytics or commercial sharing</h2>

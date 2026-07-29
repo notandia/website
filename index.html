@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Notandia — Open-source context for scholarly literature</title>
-  <meta name="description" content="Notandia is open-source browser and Zotero software for publisher context and explainable post-publication signals in scholarly literature.">
+  <title>Notandia — Publisher context and scholarly integrity signals</title>
+  <meta name="description" content="Notandia is open-source browser and Zotero software for configurable publisher context and explainable post-publication signals in scholarly literature.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://mdpi-filter.pages.dev/">
   <link rel="icon" href="/assets/notandia-symbol.svg" type="image/svg+xml">
   <meta name="theme-color" content="#12263F">
   <link rel="stylesheet" href="/styles.css">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Notandia — Open-source context for scholarly literature">
-  <meta property="og:description" content="See publisher context and formal post-publication signals without hidden quality scores or product analytics.">
+  <meta property="og:title" content="Notandia — Publisher context and scholarly integrity signals">
+  <meta property="og:description" content="Configurable publisher watchlists and formal post-publication signals without hidden quality scores or product analytics.">
 </head>
 <body>
   <header class="site-header">
@@ -32,41 +32,48 @@
     <section class="hero">
       <p class="eyebrow">Open source · Browser and Zotero tooling</p>
       <h1>See what is worth noting while you read.</h1>
-      <p class="lede">Notandia adds transparent publisher context and formal post-publication signals to scholarly literature. It exposes evidence, chronology, provenance, and coverage instead of assigning opaque quality scores.</p>
+      <p class="lede">Notandia adds configurable publisher context and formal post-publication signals to scholarly literature. It exposes evidence, user-selected treatment, chronology, provenance, and coverage instead of assigning an opaque quality score.</p>
       <div class="actions">
-        <a class="button primary" href="https://chromewebstore.google.com/detail/mdpi-filter/comknkeimaaadpiopddjoknflbmjeccp">Install for Chrome ↗</a>
-        <a class="button" href="https://microsoftedge.microsoft.com/addons/detail/mdpi-filter/efonlkldplkaeekpiajloajjmkappjgi">Install for Edge ↗</a>
-        <a class="button" href="https://github.com/notandia/zotero-plugin">Zotero source ↗</a>
+        <a class="button primary" href="https://chromewebstore.google.com/detail/mdpi-filter/comknkeimaaadpiopddjoknflbmjeccp">Current Chrome release ↗</a>
+        <a class="button" href="https://microsoftedge.microsoft.com/addons/detail/mdpi-filter/efonlkldplkaeekpiajloajjmkappjgi">Current Edge release ↗</a>
+        <a class="button" href="https://github.com/notandia/browser-extension">Next browser release source ↗</a>
       </div>
-      <div class="notice"><strong>Transition:</strong> Notandia was previously distributed as MDPI Filter. Existing Chrome and Edge store identities are retained for update continuity. Firefox and the next Zotero release use new Notandia identifiers.</div>
+      <div class="notice"><strong>Release status:</strong> the configurable Notandia interface is implemented and verified in the current source, but the Chrome and Edge stores still provide the earlier MDPI Filter release until manual browser, upgrade, and store validation is complete.</div>
     </section>
 
     <section aria-labelledby="state-heading">
-      <p class="eyebrow">Current state</p>
-      <h2 id="state-heading">Released, tested, and planned capabilities remain explicit.</h2>
+      <p class="eyebrow">Current source</p>
+      <h2 id="state-heading">Publisher identity, user preference, and formal integrity remain separate.</h2>
       <div class="grid">
         <article class="card">
-          <span class="status released">Released foundation</span>
-          <h3>Publisher detection</h3>
-          <p>Highlight, hide, count, and navigate MDPI results and citations across supported scholarly-search and publisher pages.</p>
+          <span class="status preview">Implemented · release validation pending</span>
+          <h3>Publisher watchlists</h3>
+          <p>MDPI and Frontiers are built-in, independently deactivable, and highlighted by default. Each publisher can instead use context-only, badge, dim, hide, or a custom color.</p>
         </article>
         <article class="card">
-          <span class="status preview">Release candidate</span>
+          <span class="status preview">Implemented · opt-in network feature</span>
           <h3>Formal article events</h3>
-          <p>Opt-in DOI checks expose retractions, concerns, corrections, reinstatements, withdrawals, removals, and duplicate-publication findings with provenance and chronology.</p>
+          <p>DOI checks expose retractions, concerns, corrections, reinstatements, withdrawals, removals, and duplicate-publication findings with provenance and chronology.</p>
         </article>
         <article class="card">
-          <span class="status roadmap">Roadmap</span>
-          <h3>Broader contextual coverage</h3>
-          <p>The architecture supports Chrome, Edge, Firefox, Safari, and Zotero while keeping article events separate from journal or publisher context.</p>
+          <span class="status released">Locally configurable</span>
+          <h3>Custom publishers</h3>
+          <p>Users can add validated profiles using publisher domains and DOI prefixes. Profiles are declarative data and cannot contain executable scripts or page selectors.</p>
         </article>
       </div>
+    </section>
+
+    <section aria-labelledby="watchlist-heading">
+      <p class="eyebrow">Publisher context</p>
+      <h2 id="watchlist-heading">A watchlist is a personal display rule, not a universal verdict.</h2>
+      <p class="section-intro">Notandia identifies evidence that an article, reference, or search result belongs to a configured publisher. The user decides whether to show context, add a badge, highlight, dim, hide, or disable that publisher entirely.</p>
+      <div class="notice"><strong>Interpretation:</strong> a publisher match does not mean that every article from that publisher is unreliable. Publisher identity and formal work-level events are displayed independently.</div>
     </section>
 
     <section aria-labelledby="signals-heading">
       <p class="eyebrow">Work-level taxonomy</p>
       <h2 id="signals-heading">Color supports the meaning; it never replaces the label.</h2>
-      <p class="section-intro">Formal publication events require different semantics. A correction is not a retraction, and a reinstatement changes the current state without erasing the historical timeline.</p>
+      <p class="section-intro">A correction is not a retraction, and a reinstatement changes the current state without erasing the historical timeline.</p>
       <div class="signal-list">
         <div class="signal"><span class="signal-icon red" aria-hidden="true">×</span><div><strong>Retracted</strong><p>A formal retraction affects the work.</p></div></div>
         <div class="signal"><span class="signal-icon orange" aria-hidden="true">!</span><div><strong>Expression of concern</strong><p>Serious concerns are formally recorded but remain unresolved.</p></div></div>
@@ -81,27 +88,23 @@
       <p class="eyebrow">Product principles</p>
       <h2 id="principles-heading">Evidence before verdicts.</h2>
       <div class="grid">
-        <article class="card"><h3>Scope is explicit</h3><p>Article events, journal context, publisher context, and identity warnings remain separate.</p></article>
+        <article class="card"><h3>Scope is explicit</h3><p>Publisher identity, personal display rules, and formal article events remain separate.</p></article>
         <article class="card"><h3>Coverage is visible</h3><p>Checked, unresolved, failed, and deferred identifiers are reported instead of silently treated as clear.</p></article>
-        <article class="card"><h3>Provenance is inspectable</h3><p>Signals expose source, identifier, event chronology, retrieval date, and applicable exceptions.</p></article>
+        <article class="card"><h3>Control is local</h3><p>Publisher profiles and actions are stored and evaluated in the browser. Network-assisted DOI checks remain independently optional.</p></article>
       </div>
     </section>
 
     <section aria-labelledby="trust-heading">
       <p class="eyebrow">Trust boundaries</p>
       <h2 id="trust-heading">Open source. No product analytics. No hidden score.</h2>
-      <p class="section-intro">Notandia is independently developed and is not affiliated with, authorized by, or endorsed by MDPI AG, Crossref, Retraction Watch, NCBI, browser vendors, or any publisher or data provider.</p>
+      <p class="section-intro">Notandia is independently developed and is not affiliated with, authorized by, or endorsed by MDPI AG, Frontiers Media SA, Crossref, Retraction Watch, NCBI, browser vendors, or any publisher or data provider.</p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
       <span>Notandia · Previously MDPI Filter · Open-source scholarly-context software.</span>
-      <div class="footer-links">
-        <a href="/methodology.html">Methodology</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/security.html">Security</a>
-      </div>
+      <div class="footer-links"><a href="/methodology.html">Methodology</a><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a></div>
     </div>
   </footer>
 </body>

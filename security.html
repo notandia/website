@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Security — Notandia</title>
-  <meta name="description" content="Security architecture, release controls, and vulnerability reporting for Notandia.">
+  <meta name="description" content="Security architecture, validated publisher profiles, release controls, and vulnerability reporting for Notandia.">
   <link rel="canonical" href="https://mdpi-filter.pages.dev/security.html">
   <link rel="icon" href="/assets/notandia-symbol.svg" type="image/svg+xml">
   <meta name="theme-color" content="#12263F">
@@ -15,27 +15,38 @@
   <main><article class="prose">
     <p class="eyebrow">Security</p>
     <h1>Browser and research-library access require explicit trust controls.</h1>
-    <p>Notandia extensions and Zotero plugins execute in privileged environments. The project therefore treats permission scope, message validation, dependency risk, release provenance, update continuity, and incident reporting as product requirements.</p>
+    <p>Notandia extensions and Zotero plugins execute in privileged environments. The project therefore treats permission scope, configuration validation, message validation, dependency risk, release provenance, update continuity, and incident reporting as product requirements.</p>
 
     <h2>Runtime principles</h2>
     <ul>
       <li>Request only permissions required for documented features.</li>
       <li>Do not load remote executable code.</li>
-      <li>Validate messages, identifiers, URLs, colors, and bounded text before use.</li>
-      <li>Keep external requests bounded, time-limited, and user-controllable.</li>
-      <li>Do not write untrusted data into HTML execution sinks.</li>
-      <li>Separate platform packaging from shared detection and evidence logic.</li>
+      <li>Validate messages, identifiers, URLs, domains, DOI prefixes, profile IDs, actions, colors, and bounded text before use.</li>
+      <li>Keep external requests bounded, time-limited, cancellable, and user-controllable.</li>
+      <li>Render page-derived and profile-derived labels as text instead of writing untrusted data into HTML execution sinks.</li>
       <li>Preserve released extension identities and persistent settings unless a tested migration exists.</li>
+    </ul>
+
+    <h2>Publisher-profile boundary</h2>
+    <p>Built-in and custom publisher profiles are declarative configuration records. Custom profiles may define a bounded name, domains, DOI prefixes, display action, color, and confidence policy. They cannot define JavaScript, remote resources, executable CSS selectors, or arbitrary DOM operations.</p>
+    <p>Profile imports are schema-validated, capped, normalized, and stored through browser extension storage. Page styling is idempotent and records original inline properties before applying a selected action so disabling or changing a profile can restore the page state.</p>
+
+    <h2>Network and integrity controls</h2>
+    <ul>
+      <li>NCBI and Crossref requests use HTTPS, omit credentials, and use a no-referrer policy.</li>
+      <li>Integrity checks are off by default and Firefox requires separate optional website-content consent.</li>
+      <li>DOI requests are deduplicated, rate-spaced, bounded per scan, and cancelled when disabled or replaced.</li>
+      <li>Crossref relationship direction is validated before a reverse update notice is applied to an original work.</li>
     </ul>
 
     <h2>Supply-chain and release controls</h2>
     <ul>
       <li>GitHub Actions are pinned to immutable commit SHAs.</li>
-      <li>Dependency audits and static analysis run in CI where applicable.</li>
-      <li>Packages are validated as archives before publication.</li>
-      <li>Checksums and provenance attestations are generated for supported releases.</li>
+      <li>Dependency audits, source verifiers, and regression tests run in CI where applicable.</li>
+      <li>Chrome, Edge, Firefox, and Safari packages are generated and verified from one canonical source commit.</li>
+      <li>Checksums and provenance information are generated for supported releases.</li>
       <li>Release workflows refuse version mismatches, prerelease store publication, and accidental overwrites.</li>
-      <li>Store publication uses separate protected environments and existing update identities.</li>
+      <li>Store publication uses separate protected environments and existing released update identities.</li>
     </ul>
 
     <h2>Website security</h2>
@@ -53,7 +64,7 @@
     </ul>
 
     <h2>Independence</h2>
-    <p>Notandia is independently developed and is not affiliated with, authorized by, or endorsed by any publisher, browser vendor, or data provider.</p>
+    <p>Notandia is independently developed and is not affiliated with, authorized by, or endorsed by MDPI AG, Frontiers Media SA, Crossref, Retraction Watch, NCBI, any browser vendor, or any publisher or data provider.</p>
   </article></main>
   <footer class="site-footer"><div class="footer-inner"><span>Notandia · Security reports should avoid public disclosure of exploitable details.</span><div class="footer-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a href="/privacy.html">Privacy</a></div></div></footer>
 </body>
