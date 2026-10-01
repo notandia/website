@@ -13,7 +13,7 @@ The site is intentionally dependency-free and deploys as static files on Cloudfl
 - Production branch: `main`
 - Environment variables: none
 
-The current production hostname remains `mdpi-filter.pages.dev` so existing store privacy-policy and support URLs stay valid. Buying or attaching a Notandia custom domain may remain deferred. A future domain migration must preserve every path through redirects; do not delete or abandon the current hostname.
+The canonical production address is `https://notandia.pages.dev`. Both the `notandia` and legacy `mdpi-filter` Cloudflare Pages projects deploy this repository from `main`. Keep the legacy project available so existing store privacy-policy and support URLs remain valid. Host-level redirects belong in Cloudflare Bulk Redirects, not this shared `_redirects` file. Activate them only after the new hostname and all platform privacy pages are verified live. No domain purchase is needed.
 
 ## Local preview
 
