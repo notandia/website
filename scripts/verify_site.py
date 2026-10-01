@@ -11,6 +11,8 @@ REQUIRED_PAGES = [
     ROOT / "methodology.html",
     ROOT / "privacy.html",
     ROOT / "security.html",
+    ROOT / "support/index.html",
+    ROOT / "privacy/chrome/index.html",
 ]
 REQUIRED_HEADERS = [
     "Content-Security-Policy:",
