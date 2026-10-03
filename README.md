@@ -35,11 +35,11 @@ The verifier checks required pages, internal links, security headers, canonical 
 
 The website must always distinguish:
 
-- functionality in the currently published Chrome and Edge MDPI Filter packages;
-- Notandia functionality implemented and verified in current source but awaiting manual browser, upgrade, and store validation;
+- functionality in the published Chrome Notandia 0.1.1 package and the older Edge MDPI Filter 0.0.1 package;
+- subsequent functionality in development source, with validation and release status stated separately for each platform;
 - planned functionality that is not yet implemented.
 
-The website must not imply that the new Notandia watchlist interface is already available through the stores until those existing listings have been updated.
+The configurable Notandia interface is available in Chrome as of 3 October 2026. This does not establish availability or feature parity in Edge, Firefox, or Zotero.
 
 ## Evidence and interpretation boundaries
 
@@ -66,7 +66,7 @@ The website must never describe a publisher watchlist match as an objective qual
 
 - Public product name: **Notandia**.
 - Transition wording: **Previously MDPI Filter**.
-- Chrome and Edge keep their released store identities.
+- Chrome uses the Notandia name with its existing store item ID; Edge retains the MDPI Filter name and its existing item ID.
 - Firefox is unreleased and plans to use `browser-extension@notandia.github.io` for its first submission.
 - MDPI and Frontiers may be named when describing their built-in publisher profiles.
 - Notandia must be described as independent and unaffiliated with publishers, browser vendors, and data providers.
