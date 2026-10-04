@@ -19,8 +19,9 @@
     <p>Content scripts inspect page structure, links, citation text, scholarly identifiers, and publisher evidence. Built-in MDPI and Frontiers settings and custom publisher names, domains, DOI prefixes, actions, colors, and confidence policies are stored through Chrome extension storage and processed locally.</p>
     <p>These profiles are not sent to the developer, Crossref, NCBI, publishers, or an analytics provider. Custom profiles are validated declarative data and cannot contain scripts or executable selectors.</p>
 
+    <p>Crossref and NCBI checks are off by default for new installations. The setup prompt offers activation of both services or individual choices in Settings. Once enabled, checks run automatically when pages contain relevant identifiers. Updates preserve saved choices; either service can be turned off independently. Both providers receive ordinary network metadata, including the user’s IP address.</p>
     <h2>NCBI metadata lookups</h2>
-    <p>When enabled, the extension sends only validated DOI, PMID, or PMCID values to the NCBI ID Converter over HTTPS. Requests identify the application as <code>notandia</code>, omit browser credentials and referrers, and are deduplicated, batched, and rate-bounded. Disabling NCBI lookups causes zero related requests but may reduce publisher detection from indirect identifiers.</p>
+    <p>When enabled, the extension sends only validated DOI, PMID, or PMCID values to the NCBI ID Converter over HTTPS. Requests include the public application label <code>NotandiaBrowser</code> and a public maintainer contact. These identify the application, not the user. Requests omit browser credentials and referrers, and are deduplicated, batched, and rate-bounded. Disabling NCBI lookups causes zero related requests but may reduce publisher detection from indirect identifiers.</p>
 
     <p>NCBI also receives ordinary network metadata, including the IP address from which the request is made. Identifier lookup is optional and can be disabled in the extension settings.</p>
 
