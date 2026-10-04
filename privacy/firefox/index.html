@@ -11,7 +11,7 @@
   <header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/notandia-symbol.svg" alt="" width="32" height="32"><span>Notandia</span></a><div class="nav-links"><a href="/">Home</a><a href="/methodology.html">Methodology</a><a aria-current="page" href="/privacy.html">Privacy</a><a href="/security.html">Security</a></div></nav></header>
   <main><article class="prose">
     <p class="eyebrow">Firefox extension</p><h1>Privacy policy for Notandia</h1>
-    <p><strong>Last updated:</strong> July 29, 2026</p>
+    <p><strong>Last updated:</strong> October 4, 2026</p>
     <p>The Firefox version of Notandia has not yet been signed or published. Current source adds configurable publisher watchlists and optional formal post-publication checks. Most processing occurs locally in Firefox.</p>
     <p>Notandia is independent and is not affiliated with, authorized by, or endorsed by MDPI AG, Frontiers Media SA, Crossref, Retraction Watch, NCBI, Mozilla, or any publisher or data provider.</p>
 
@@ -19,13 +19,14 @@
     <p>Content scripts inspect page structure, links, citation text, scholarly identifiers, and publisher evidence. Built-in MDPI and Frontiers settings and custom publisher names, domains, DOI prefixes, actions, colors, and confidence policies are stored through Firefox extension storage and processed locally.</p>
     <p>These profiles are not sent to the developer, Crossref, NCBI, publishers, or an analytics provider. Custom profiles are validated declarative data and cannot contain scripts or executable selectors.</p>
 
+    <p>Crossref and NCBI checks are off by default for new installations. The setup prompt offers activation of both services or individual choices in Settings. Once enabled, checks run automatically when pages contain relevant identifiers. Updates preserve saved choices; either service can be turned off independently. Both providers receive ordinary network metadata, including the user’s IP address.</p>
     <h2>NCBI metadata lookups</h2>
-    <p>When enabled, the extension sends only validated DOI, PMID, or PMCID values to the NCBI ID Converter over HTTPS. Requests identify the application as <code>notandia</code>, omit browser credentials and referrers, and are deduplicated, batched, and rate-bounded.</p>
+    <p>When enabled, the extension sends only validated DOI, PMID, or PMCID values to the NCBI ID Converter over HTTPS. Requests include the public application label <code>NotandiaBrowser</code> and a public maintainer contact. These identify the application, not the user. Requests omit browser credentials and referrers, and are deduplicated, batched, and rate-bounded.</p>
 
     <h2>Optional Crossref integrity lookups</h2>
-    <p>This feature is off by default. Enabling it is a user action, and Firefox presents an additional optional <code>websiteContent</code> data permission describing transmission of website-derived DOI identifiers. Denial means no Crossref integrity requests are made.</p>
+    <p>This feature is off by default. Firefox requires optional <code>websiteContent</code> data permission before either Crossref or NCBI receives identifiers. Denial keeps both services off.</p>
     <p>After consent, normalized DOI identifiers are sent to Crossref to retrieve formal update relationships. The extension may query both a DOI’s direct record and a reverse <code>updates:&lt;doi&gt;</code> relationship for separately registered notices.</p>
-    <p>Requests omit the page address, article text, citation text, publisher-profile settings, search query, browsing history, cookies, account identifiers, analytics identifiers, and referrers. A scan attempts no more than 50 DOI records and starts no more than four requests per second. Disabling the feature cancels active and queued requests and removes the optional permission where supported.</p>
+    <p>Requests omit the page address, article text, citation text, publisher-profile settings, search query, browsing history, cookies, account identifiers, analytics identifiers, and referrers. A scan attempts no more than 50 DOI records and starts no more than four requests per second. Disabling the feature cancels its active and queued requests. The optional permission is removed when both services are off.</p>
 
     <h2>Pre-release identity</h2>
     <p>The first Firefox submission is planned to use Gecko ID <code>browser-extension@notandia.github.io</code>. Because Firefox has not been released, this is a pre-release identifier rather than an existing-user compatibility identity.</p>
