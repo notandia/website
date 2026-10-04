@@ -35,11 +35,11 @@ The verifier checks required pages, internal links, security headers, canonical 
 
 The website must always distinguish:
 
-- functionality in the published Chrome Notandia 0.1.1 package and the older Edge MDPI Filter 0.0.1 package;
+- functionality in the published Chrome package and the updated Edge package (maintainer-confirmed on 4 October 2026), with pending Edge listing artwork and description kept separate from package availability;
 - subsequent functionality in development source, with validation and release status stated separately for each platform;
 - planned functionality that is not yet implemented.
 
-The configurable Notandia interface is available in Chrome as of 3 October 2026. This does not establish availability or feature parity in Edge, Firefox, or Zotero.
+The configurable Notandia interface is available in Chrome as of 3 October 2026. The maintainer confirmed the updated Edge package on 4 October 2026. Firefox has been submitted to Mozilla and awaits approval. Zotero has separate releases; store availability does not establish feature parity.
 
 ## Evidence and interpretation boundaries
 
@@ -66,8 +66,8 @@ The website must never describe a publisher watchlist match as an objective qual
 
 - Public product name: **Notandia**.
 - Transition wording: **Previously MDPI Filter**.
-- Chrome uses the Notandia name with its existing store item ID; Edge retains the MDPI Filter name and its existing item ID.
-- Firefox is unreleased and plans to use `browser-extension@notandia.github.io` for its first submission.
+- Chrome uses the Notandia name with its existing store item ID; Edge uses the Notandia name with its existing item ID; artwork and description updates are awaiting approval.
+- Firefox has been submitted to Mozilla with Gecko ID `browser-extension@notandia.github.io`; public availability awaits approval.
 - MDPI and Frontiers may be named when describing their built-in publisher profiles.
 - Notandia must be described as independent and unaffiliated with publishers, browser vendors, and data providers.
 - Legacy store IDs, update identities, and the current Pages hostname may remain where continuity requires them.
