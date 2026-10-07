@@ -39,7 +39,7 @@ The website must always distinguish:
 - subsequent functionality in development source, with validation and release status stated separately for each platform;
 - planned functionality that is not yet implemented.
 
-The configurable Notandia interface is available in Chrome as of 3 October 2026. The maintainer confirmed the updated Edge package on 4 October 2026. Firefox has been submitted to Mozilla and awaits approval. Zotero has separate releases; store availability does not establish feature parity.
+The configurable Notandia interface is available in Chrome as of 3 October 2026. The maintainer confirmed the updated Edge package on 4 October 2026. Firefox 0.1.2 is publicly downloadable at https://addons.mozilla.org/en-US/firefox/addon/notandia/, verified 7 October 2026. Mozilla reports automated screening and tentative approval; later human review remains possible. Zotero has separate releases; store availability does not establish feature parity.
 
 ## Evidence and interpretation boundaries
 
@@ -67,7 +67,7 @@ The website must never describe a publisher watchlist match as an objective qual
 - Public product name: **Notandia**.
 - Transition wording: **Previously MDPI Filter**.
 - Chrome uses the Notandia name with its existing store item ID; Edge uses the Notandia name with its existing item ID; artwork and description updates are awaiting approval.
-- Firefox has been submitted to Mozilla with Gecko ID `browser-extension@notandia.github.io`; public availability awaits approval.
+- Firefox 0.1.2 is publicly available on Mozilla Add-ons with Gecko ID `browser-extension@notandia.github.io`; public listing and download verified 7 October 2026. This is automated-screening approval, not a claim that human review has been completed.
 - MDPI and Frontiers may be named when describing their built-in publisher profiles.
 - Notandia must be described as independent and unaffiliated with publishers, browser vendors, and data providers.
 - Legacy store IDs, update identities, and the current Pages hostname may remain where continuity requires them.
